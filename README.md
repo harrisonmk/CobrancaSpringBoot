@@ -4,6 +4,11 @@
 
 # Recursos utilizados
 
+* Netbeans
+* Wamp
+* mysql workBench
+* navegador firefox/chrome
+
 # Back end
 
 * java
