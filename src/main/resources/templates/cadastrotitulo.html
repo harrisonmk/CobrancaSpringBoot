@@ -1,0 +1,108 @@
+<!DOCTYPE html >
+
+<html layout:decorate="~{LayoutPadrao}">
+
+    <head>
+        <title>Cadastro de Titulo</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      
+
+    </head>
+    <body>
+
+
+
+        <!-- Header Padrao vindo do arquivo LayoutPadrao.html-->
+        <div th:replace="LayoutPadrao :: header"></div> 
+
+        <section layout:fragment="conteudo">
+
+            <!-- Titulo -->
+            <form method="POST" th:action="@{/titulos/novo}" th:object="${titulo}">
+
+                <div th:replace="MensagemGeral :: mensagemCorreto"></div>
+                <div th:replace="MensagemErro :: mensagem"></div>
+
+                <div class="card">
+
+                    <div class="card-header">
+                        <div class="clearfix">
+                            <h4 class="card-title aw-titulo-panel">Novo Titulo</h4>
+                            <a class="btn btn-link aw-link-panel" href="/titulos/listagem">Voltar Pesquisa</a>
+                        </div>
+                    </div>     
+
+
+                    <!-- Descricao -->  
+                    <div class="card-body">
+
+                        <input type="hidden" th:field="${titulo.id}"/>
+
+                        <div class="form-group" th:classappend="${#fields.hasErrors('descricao')} ? text-danger">    
+
+                            <label for="descricao" class="col-sm-2 control-label">Descricao</label>
+                            <div class="col-sm-4">
+
+                                <input type="text" class="form-control" id="descricao" name="descricao" th:field="${titulo.descricao}"/>     
+                            </div>
+                        </div>  
+
+                        <div class="form-group" th:classappend="${#fields.hasErrors('dataVencimento')} ? text-danger">    
+
+                            <label for="dataVencimento" class="col-sm-2 control-label">Data de Vencimento</label>
+                            <div class="col-sm-2">
+
+                                <input type="text" class="form-control " id="dataVencimento" th:field="${titulo.dataVencimento}" 
+                                       data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="pt-BR"
+                                       data-date-autoclose="true" data-date-today-highlight="true" data-date-orientation="bottom"/>     
+                            </div>
+                        </div>  
+
+                        <div class="form-group" th:classappend="${#fields.hasErrors('valor')} ? text-danger">    
+
+                            <label for="valor" class="col-sm-2 control-label">Valor</label>
+                            <div class="col-sm-2">
+
+                                <input type="text" class="form-control js-currency" id="valor"  th:field="${titulo.valor}"/>     
+                            </div>
+                        </div>  
+
+                        <div class="form-group">    
+
+                            <label for="status" class="col-sm-2 control-label">Status</label>
+                            <div class="col-sm-2">
+
+                                <select class="form-control" name="status" th:field="${titulo.status}">
+
+                                    <!-- status foi um atributo criado aqui  "for each aqui"-->
+                                    <option th:each="status : ${todosStatusTitulo}" th:value="${status}" th:text="${status.descricao}"></option>  
+
+
+                                </select>  
+
+                            </div>
+                        </div>  
+
+
+                        <div class="form-group">
+
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">Salvar</button>   
+
+                            </div>    
+
+                        </div>     
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        
+    </body>
+</html>

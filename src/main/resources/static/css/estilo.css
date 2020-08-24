@@ -1,0 +1,73 @@
+/* Tela grande */
+@media (min-width: 768px) {
+    .panel-default {
+
+        margin-left: 10px;
+        margin-right: 10px;  
+
+    }
+
+
+    .alert {
+
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px; 
+
+    }
+
+
+}
+
+
+
+.navbar-brand {
+
+    padding-top: 12px;   
+
+}
+
+.card {
+
+    margin-left: 10px;
+    margin-right: 10px;  
+
+}
+
+
+.aw-link-panel {
+
+    float:right;
+    padding-right:50px;
+
+}
+
+.aw-link-panel-pesquisa {
+
+    float:right;
+    padding-right:50px;
+    padding-top:10px; 
+    padding-left: 50px;
+    padding-bottom: 10px;
+
+}
+
+.aw-titulo-panel{
+
+
+    float:left;  
+    padding-top:2px; 
+
+
+}
+
+
+.aw-titulo-panel-pesquisa{
+
+    font-size: 20px;
+    float:left;  
+    padding-top:10px; 
+    padding-left: 50px;
+    padding-bottom: 10px;
+
+}
