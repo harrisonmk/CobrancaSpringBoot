@@ -43,7 +43,7 @@ public class TituloControle {
     
     
     //metodo para renderizar a tela de cadastro de titulo
-    @RequestMapping(value = "/novo", method = RequestMethod.PUT)
+    @RequestMapping(value = "/novo", method = RequestMethod.GET)
     public ModelAndView salvar() {
 
         ModelAndView resultado = new ModelAndView("cadastrotitulo");
@@ -113,7 +113,7 @@ public class TituloControle {
 
     
     
-    @RequestMapping(value = "listagem/{id}/receber", method = RequestMethod.GET)
+    @RequestMapping(value = "listagem/{id}/receber", method = RequestMethod.PUT)
     public @ResponseBody String receber(@PathVariable("id") Long id) {
         return cadastroTituloService.receber(id);
           
