@@ -43,7 +43,7 @@ public class TituloControle {
     
     
     //metodo para renderizar a tela de cadastro de titulo
-    @RequestMapping(value = "/novo", method = RequestMethod.GET)
+    @RequestMapping(value = "/novo", method = RequestMethod.PUT)
     public ModelAndView salvar() {
 
         ModelAndView resultado = new ModelAndView("cadastrotitulo");
